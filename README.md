@@ -1,28 +1,51 @@
-# 🚢 Titanic Survival Prediction using ANN
+# 🚢 Titanic Survival Prediction (ANN)
+
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)
+![Status](https://img.shields.io/badge/Status-Completed-success)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+---
 
 ## 📌 Overview
 
-This project builds a **classification model** using an **Artificial Neural Network (ANN)** to predict whether a passenger survived the Titanic disaster.
+This project implements a **Machine Learning classification model** using an **Artificial Neural Network (ANN)** to predict whether a passenger survived the Titanic disaster.
 
-The workflow includes:
+It demonstrates a complete ML pipeline:
 
-* Data loading and exploration
-* Data cleaning and preprocessing
-* Feature encoding and scaling
-* Model building using TensorFlow/Keras
-* Training and evaluation
-* Making predictions on new data
+* Data preprocessing & cleaning
+* Feature encoding & scaling
+* Model building using Keras
+* Training & evaluation
+* Interactive prediction system
 
 ---
 
 ## 🧠 Model Architecture
 
-The ANN model consists of:
+```
+Input Layer (7 features)
+        ↓
+Dense (16 neurons, ReLU)
+        ↓
+Dense (8 neurons, ReLU)
+        ↓
+Output (1 neuron, Sigmoid)
+```
 
-* Input layer (based on dataset features)
-* Hidden Layer 1: 16 neurons (ReLU)
-* Hidden Layer 2: 8 neurons (ReLU)
-* Output Layer: 1 neuron (Sigmoid)
+---
+
+## 📊 Dataset Features
+
+| Feature  | Description                   |
+| -------- | ----------------------------- |
+| Pclass   | Passenger class               |
+| Sex      | Gender (0 = male, 1 = female) |
+| Age      | Age of passenger              |
+| SibSp    | Siblings/Spouses aboard       |
+| Parch    | Parents/Children aboard       |
+| Fare     | Ticket fare                   |
+| Embarked | Port of embarkation           |
 
 ---
 
@@ -36,116 +59,108 @@ The ANN model consists of:
 
 ---
 
-## 📊 Dataset
-
-The dataset used is the **Titanic dataset**, which includes features such as:
-
-* Passenger Class (Pclass)
-* Sex
-* Age
-* SibSp (siblings/spouses aboard)
-* Parch (parents/children aboard)
-* Fare
-* Embarked
-
----
-
 ## 🔄 Workflow
 
-1. **Load Data**
+### 1. Data Loading
 
-   * Read dataset using pandas
+* Load dataset using pandas
 
-2. **Data Cleaning**
+### 2. Data Cleaning
 
-   * Drop unnecessary columns (Name, Ticket, Cabin)
-   * Handle missing values
+* Drop irrelevant columns (Name, Ticket, Cabin)
+* Handle missing values
 
-3. **Preprocessing**
+### 3. Preprocessing
 
-   * Encode categorical variables
-   * Scale features using StandardScaler
+* Encode categorical variables
+* Apply feature scaling (StandardScaler)
 
-4. **Train-Test Split**
+### 4. Model Training
 
-   * 80% training, 20% testing
+* Build ANN with Dense layers
+* Train using Adam optimizer
 
-5. **Model Training**
+### 5. Evaluation
 
-   * Train ANN using Adam optimizer
+* Evaluate model performance on test data
 
-6. **Evaluation**
+### 6. Prediction
 
-   * Measure accuracy on test data
-
-7. **Prediction**
-
-   * Accept user input and predict survival
+* Take user input
+* Predict survival with confidence score
 
 ---
 
 ## 📈 Model Performance
 
-The model achieves approximately:
-
-```text id="acc1"
-~80% - 85% accuracy
+```text
+Accuracy: ~80% - 85%
 ```
 
 ---
 
 ## ▶️ How to Run
 
-1. Install dependencies:
+### 1. Install dependencies
 
-```bash id="run1"
+```bash
 pip install pandas numpy scikit-learn tensorflow matplotlib
 ```
 
-2. Run the script:
+### 2. Run the project
 
-```bash id="run2"
+```bash
 python main.py
 ```
 
-3. Enter input values when prompted:
+### 3. Example Input
 
-```text id="run3"
-Pclass Sex Age SibSp Parch Fare Embarked
-```
-
-Example:
-
-```text id="run4"
+```text
 3 0 22 1 0 7.25 0
 ```
 
 ---
 
-## 📌 Example Output
+## 🧪 Example Output
 
-```text id="out1"
+```text
 Prediction: Survived
 Confidence: 82.45%
 ```
 
 ---
 
-## 🧪 Future Improvements
+## 📁 Project Structure
+
+```
+titanic-survival-ann/
+│
+├── main.py
+├── titanic.csv
+├── README.md
+├── LICENSE
+└── requirements.txt
+```
+
+---
+
+## 🚀 Future Improvements
 
 * Add confusion matrix visualization
-* Improve feature engineering
-* Add GUI interface
 * Hyperparameter tuning
+* GUI interface (Tkinter / Streamlit)
+* Model saving & loading
 
 ---
 
 ## 👨‍💻 Author
 
-Mohamed Mohsen
+**Mohamed Mohsen**
 
 ---
 
-## ⭐ Notes
+## ⭐ Final Note
 
-This project is part of a Machine Learning practical assignment focusing on ANN classification.
+This project was developed as part of a **Machine Learning practical assignment**, demonstrating understanding of ANN-based classification systems.
+
+---
